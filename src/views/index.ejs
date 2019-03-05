@@ -1,0 +1,28 @@
+<% include partials/header %>
+<!-- Add button -->
+<a href="/add" class="btn btn-success btn rounded-0 add-btn"><i class="fas fa-plus"></i></a>
+
+<!-- Main Content -->
+<div class="container pb-5">
+    <h1 class="text-center display-3 mb-4">Party List</h1>
+    <div class="row grid-3 py-2">
+        <% for(var i = 0;i < guests.length; i++){ %>
+        <div class="card person shadow">
+            <div class="person-image">
+                <img src="/public/images/uploads/<%= guests[i].photoName %>" alt="<%= guests[i].name %>">
+            </div>
+            <div class="p-2">
+                <h4><%= guests[i].name %></h4>
+                <p><%= guests[i].description %></p>
+            </div>
+
+            <!-- Delete item button -->
+            <a href="/delete/<%= guests[i]._id %>" class="btn btn-danger rounded-0 dlt-btn"><i class="far fa-trash-alt"></i></a>
+
+            <!-- Edit item button -->
+            <a href="/edit/<%= guests[i]._id %>" class="btn btn-primary rounded-0 edit-btn"><i class="fas fa-pencil-alt"></i></a>
+        </div>
+        <% } %>
+    </div>
+</div>
+<% include partials/footer %>

@@ -1,0 +1,66 @@
+html{
+    height: 100%;
+}
+
+body{
+    position: relative;
+    min-height: 100%;
+}
+
+.grid-3{
+    display: grid;
+    grid-template-columns: repeat(4,250px);
+    grid-gap: 30px;
+    justify-content: center;
+}
+
+.person{
+    overflow: hidden;
+    position: relative;
+    border-radius:10px;
+}
+
+.person-image{
+    overflow: hidden;
+}
+
+.person-image img{
+    width: 100%;
+    transition: all 1000ms ease; 
+}
+
+.person:hover .person-image img{
+    transform: scale(1.2);
+}
+
+.add-btn{
+    position:fixed;
+    z-index: 9999;
+    left: 0;
+    top: 50%;
+}
+
+.dlt-btn{
+    position:absolute;
+    z-index: 9999;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.edit-btn{
+    position:absolute;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.person:hover .dlt-btn , .person:hover .edit-btn{
+    display:block;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

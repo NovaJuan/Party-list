@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+    <div class="container">
+        <h1 class="text-center display-2">Edit Guest</h1>
+        <form action="/update/<%= guest._id %>" method="POST" enctype="multipart/form-data" class="form-group col-sm-5  mx-auto card p-4 shadow rounded" autocomplete="off">
+            <input class="form-control mb-3" type="text" placeholder="Name" name="name" value="<%= guest.name%>" required autofocus>
+            <input class="form-control mb-3" type="text" placeholder="Description" name="description" value="<%= guest.description%>" required>
+            <label for="photo">Photo:</label>
+            <input class="mb-3" type="file" name="photo" id="photo" required>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+
+<% include partials/footer %>
